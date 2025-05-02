@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎵 Pro Music Player</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+    <body>
+
+        <div class="player">
+            <div class="wave" id="wave">
+                <div class="wave1"></div>
+                <div class="wave1"></div>
+                <div class="wave1"></div>
+            </div>
+            <img id="cover" src="" alt="Album cover" class="cover">
+            <h2 id="title">Loading...</h2>
+            <h3 id="artist">Please wait</h3>
+
+            <audio id="audio"></audio>
+
+            <div class="controls">
+                <button id="prev">⏮️</button>
+                <button id="play">▶️</button>
+                <button id="next">⏭️</button>
+            </div>
+
+            <div class="progress-container">
+                <span id="currentTime">0:00</span>
+                <input type="range" id="progressBar" value="0" min="0" max="100">
+                <span id="duration">0:00</span>
+            </div>
+
+            <div class="volume-container">
+                <label for="volume">🔊</label>
+                <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
