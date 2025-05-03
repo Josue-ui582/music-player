@@ -1,44 +1,47 @@
-/* Base reset */
-body {
-  background: linear-gradient(135deg, #70e1f5, #ffd194);
-  font-family: 'Poppins', sans-serif;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+*{
+  padding: 0;
   margin: 0;
-  padding: 1rem;
+  font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
 }
 
-/* Player container */
-.player {
-  background: white;
-  padding: 2rem;
-  border-radius: 20px;
-  text-align: center;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  position: relative;
+body{
+  background: linear-gradient(90deg, #70e1f5, #ffd194);
 }
 
-/* Cover Image */
-.cover {
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+}
+
+.player{
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: #fff;
+  width: 35%;
+}
+
+.cover{
+  object-fit: cover;
   width: 100%;
   height: 250px;
-  object-fit: cover;
   border-radius: 15px;
 }
 
-/* Title and Artist */
-h2, h3 {
-  margin: 10px 0;
+h2, h3{
+  font-size: 25px;
 }
 
-/* Controls section */
 .controls {
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -56,100 +59,38 @@ h2, h3 {
   transform: scale(1.2);
 }
 
-/* Progress bar */
 .progress-container {
   display: flex;
   align-items: center;
   margin-top: 20px;
   gap: 10px;
+  width: 100%;
 }
 
 #progressBar {
   flex: 1;
 }
 
-/* Volume control */
 .volume-container {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 #volume {
   width: 100%;
 }
 
-/* Animated wave (optional visual) */
-.wave {
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.wave1 {
-  width: 5px;
-  height: 20px;
-  margin: 0 2px;
-  background: #ff6f91;
-  animation: wave 1s linear infinite;
-  border-radius: 20px;
-}
-
-.wave1:nth-child(2) { animation-delay: 0.2s; }
-.wave1:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes wave {
-  0% { height: 20px; }
-  50% { height: 50px; }
-  100% { height: 20px; }
-}
-
-/* -------------- RESPONSIVE BREAKPOINTS -------------- */
-
-/* Tablets */
-@media (max-width: 1024px) {
-  .player {
-    max-width: 400px;
+@media (max-width : 420px) {
+  .player{
+    width: 90%;
   }
 }
 
-/* Large Phones */
-@media (max-width: 768px) {
-  .player {
-    max-width: 90%;
-  }
-
-  .cover {
-    height: 220px;
-  }
-
-  .controls button {
-    font-size: 1.8rem;
-  }
-}
-
-/* Small Phones */
-@media (max-width: 480px) {
-  .player {
-    padding: 1rem;
-    max-width: 95%;
-  }
-
-  .cover {
-    height: 180px;
-  }
-
-  .controls {
-    gap: 10px;
-  }
-
-  .controls button {
-    font-size: 1.5rem;
+@media ((min-width : 421px)and (max-width : 720px)) {
+  .player{
+    width: 70%;
   }
 }

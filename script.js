@@ -9,7 +9,6 @@ const progressBar = document.getElementById('progressBar');
 const currentTimeEl = document.getElementById('currentTime');
 const durationEl = document.getElementById('duration');
 const volumeControl = document.getElementById('volume');
-const wave = document.getElementById('wave');
 
 let songs = [];
 let currentSongIndex = 0;
@@ -42,14 +41,12 @@ function playSong() {
     isPlaying = true;
     audio.play();
     playBtn.innerHTML = "⏸️";
-    wave.style.opacity = 1;
 }
 
 function pauseSong() {
     isPlaying = false;
     audio.pause();
     playBtn.innerHTML = "▶️";
-    wave.style.opacity = 0;
 }
 
 playBtn.addEventListener("click", () => {
