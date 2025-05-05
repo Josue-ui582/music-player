@@ -9,6 +9,7 @@ const progressBar = document.getElementById('progressBar');
 const currentTimeEl = document.getElementById('currentTime');
 const durationEl = document.getElementById('duration');
 const volumeControl = document.getElementById('volume');
+const error = document.getElementById('error')
 
 let songs = [];
 let currentSongIndex = 0;
@@ -23,8 +24,10 @@ async function loadSongs() {
         console.log(data.results);
         songs = data.results;
         loadSong(currentSongIndex);
-    } catch (error) {
-        console.error("Failed to load songs", error);
+    } catch (err) {
+        console.error("Network error", err)
+        const errorMessage = "Network error, please turn on internet"
+        error.textContent = errorMessage;
     }
 }
 
